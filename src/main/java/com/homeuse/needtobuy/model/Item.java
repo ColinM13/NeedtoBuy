@@ -30,4 +30,11 @@ public class Item {
         return quantity;
     }
 
+    public void setName(@NonNull String name) {
+        this.name = name;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 }

@@ -17,9 +17,10 @@ public class LocalItemDAO implements ItemDAO {
     public LocalItemDAO() {
         this.items = new ArrayList<>();
 
-        items.add(new Item(UUID.randomUUID(), "Milk", 1));
+        items.add(new Item(UUID.fromString("38684009-ef7a-4788-a534-e74e55a48b9b"), "Milk", 1));
         items.add(new Item(UUID.randomUUID(), "Chicken Breast", 3));
         items.add(new Item(UUID.randomUUID(), "Fruit Storage Containers", 4));
+        items.add(new Item(UUID.fromString("ab88445f-0d6e-49be-a4d6-93ecba16bb8f"), "PS5", 1));
     }
 
     @Override
@@ -33,17 +34,28 @@ public class LocalItemDAO implements ItemDAO {
     }
 
     @Override
-    public void updateByName() {
-
+    public void updateItem(Item item) {
+        for(int i = 0; i < items.size(); i++) {
+            if(items.get(i).getUuid().equals(item.getUuid())) {
+                items.get(i).setQuantity(item.getQuantity());
+                items.get(i).setName(item.getName());
+                break;
+            }
+        }
     }
 
     @Override
-    public void deleteByUUID() {
-
+    public void deleteByUUID(UUID uuid) {
+        for(int i = 0; i < items.size(); i++) {
+            if(items.get(i).getUuid().equals(uuid)) {
+                items.remove(i);
+                break;
+            }
+        }
     }
 
     @Override
     public void deleteAll() {
-
+        this.items.clear();
     }
 }

@@ -7,8 +7,11 @@ import org.springframework.lang.NonNull;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.websocket.server.PathParam;
 import java.util.List;
+import java.util.UUID;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/api/v1")
 public class ItemController {
@@ -30,4 +33,18 @@ public class ItemController {
         this.itemService.insertItem(item);
     }
 
+    @PutMapping("/items")
+    public void updateItem(@NonNull @RequestBody Item item) {
+        this.itemService.updateItem(item);
+    }
+
+    @DeleteMapping("/items/{uuid}")
+    public void deleteByUUID(@PathVariable("uuid") UUID uuid) {
+        this.itemService.deleteByUUID(uuid);
+    }
+
+    @DeleteMapping("/items/delete")
+    public void deleteAll() {
+        this.itemService.deleteAll();
+    }
 }

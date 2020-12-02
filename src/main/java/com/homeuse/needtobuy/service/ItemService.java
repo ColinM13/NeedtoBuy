@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 
 @Service
@@ -27,15 +28,17 @@ public class ItemService {
         this.itemDAO.insertItem(item.getName(), item.getQuantity());
     }
 
-    public void updateByName() {
-
+    public void updateItem(Item item) {
+        this.itemDAO.updateItem(item);
     }
 
-    public void deleteByUUID() {
-
+    public void deleteByUUID(UUID uuid) {
+        this.itemDAO.deleteByUUID(uuid);
     }
 
     public void deleteAll() {
-
+        this.itemDAO.deleteAll();
     }
+
+
 }
