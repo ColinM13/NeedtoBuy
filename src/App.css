@@ -2,37 +2,59 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.list-of-items {
+  color: rgb(85, 10, 119);
+  background-color: white;
+  width: 500px;
+  padding: 0px;
+  display: inline-block;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.list-item {
+  list-style-type: none;
+  padding: 5px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgb(45, 43, 46)
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.checked-off-item {
+  list-style-type: none;
+  text-decoration: line-through;
+  color: rgb(45, 43, 46);
+  padding: 5px;
+  background-color: rgb(74, 73, 75);
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgb(45, 43, 46)
 }
 
-.App-link {
-  color: #61dafb;
+.left {
+  float: left;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.right {
+  float: right;
+}
+
+.checked-off-left {
+  float: left;
+  text-decoration: line-through;
+}
+
+.checked-off-right {
+  float: right;
+  text-decoration: line-through;
+}
+
+.list-item:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.checked-off-item:after {
+  content: "";
+  display: table;
+  clear: both;
 }
