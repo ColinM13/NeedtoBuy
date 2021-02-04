@@ -1,0 +1,60 @@
+.App {
+  text-align: center;
+}
+
+.list-of-items {
+  color: rgb(85, 10, 119);
+  background-color: white;
+  width: 500px;
+  padding: 0px;
+  display: inline-block;
+}
+
+.list-item {
+  list-style-type: none;
+  padding: 5px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgb(45, 43, 46)
+}
+
+.checked-off-item {
+  list-style-type: none;
+  text-decoration: line-through;
+  color: rgb(45, 43, 46);
+  padding: 5px;
+  background-color: rgb(74, 73, 75);
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgb(45, 43, 46)
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.checked-off-left {
+  float: left;
+  text-decoration: line-through;
+}
+
+.checked-off-right {
+  float: right;
+  text-decoration: line-through;
+}
+
+.list-item:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.checked-off-item:after {
+  content: "";
+  display: table;
+  clear: both;
+}
