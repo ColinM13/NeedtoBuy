@@ -1,3 +1,7 @@
+/**
+ * TODO: add Delete and Edit functionality for items
+ */
+
 import React from 'react';
 import NewItem from './NewItem.js';import ItemList from './ItemList.js';
 
